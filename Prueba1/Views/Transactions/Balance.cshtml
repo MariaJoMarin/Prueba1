@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Balance Page";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center">Welcome, @ViewBag.User.Name</h2>
+    <hr />
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="card text-center shadow-lg border-0">
+                <div class="card-body">
+                    <h5 class="card-title">Current Balance</h5>
+                    <h2 class="text-success fw-bold">₡@ViewBag.User.Money</h2>
+                    <a href="javascript:history.back()" class="btn btn-secondary mt-2">Go Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

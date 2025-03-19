@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Main Page";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center">Welcome, @ViewBag.User.Name</h2>
+    <hr />
+    <div class="row justify-content-center">
+        <div class="col-md-3">
+            <div class="card text-center shadow-lg border-0">
+                <div class="card-body">
+                    <h5 class="card-title">Check Balance</h5>
+                    <a asp-action="Balance" asp-controller="Transactions" class="btn btn-primary">View Balance</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-center shadow-lg border-0">
+                <div class="card-body">
+                    <h5 class="card-title">Make a Transaction</h5>
+                    <a asp-action="Create" asp-controller="Transactions" class="btn btn-success">New Transaction</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-center shadow-lg border-0">
+                <div class="card-body">
+                    <h5 class="card-title">Transaction History</h5> 
+                    <a asp-action="Index" asp-controller="Transactions" class="btn btn-info">View History</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

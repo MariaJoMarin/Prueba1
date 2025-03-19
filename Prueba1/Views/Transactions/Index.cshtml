@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Transaction History";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center">Transaction History - Welcome @ViewBag.User.Name</h2>
+    <a class="btn btn-secondary mb-3" href="javascript:history.back()">Go Back</a>
+    <hr />
+    <div class="row justify-content-center">
+        @if (ViewBag.Transactions != null && ViewBag.Transactions.Count > 0)
+        {
+            <div class="col-md-8">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>From</th>
+                                <th>To</th>
+                                <th>Amount</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var transaction in ViewBag.Transactions)
+                            {
+                                <tr>
+                                    <td>@transaction.FromUser</td>
+                                    <td>@transaction.ToUser</td>
+                                    <td>₡@transaction.Amount</td>
+                                    <td>@transaction.Date</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        }
+        else
+        {
+            <p class="text-center text-muted">No transactions available.</p>
+        }
+    </div>
+</div>
